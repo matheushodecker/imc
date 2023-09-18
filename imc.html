@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora imc</title>
+  <script>
+
+    function click_calcular() {
+      let peso = document.getElementById("peso").value;
+      let altura = document.getElementById("altura").value;
+      if (peso == "") {
+        alert("Informe o seu peso");
+      } else if (altura == "") {
+        alert("Informe a sua altura");
+      } else {
+        let imc = Number(peso).toFixed(2) / Number(altura * altura).toFixed(2);
+        document.getElementById("imc").value = imc.toFixed(2);
+
+      }
+    }
+
+    function click_limpar() {
+      document.getElementById("peso").value = "";
+      document.getElementById("altura").value = "";
+      document.getElementById("imc").value = "";
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1 id="titulo">
+    Calculadora imc
+  </h1>
+
+  <form>
+    <div>
+      <label for="peso">Peso</label>
+      <input type="number" name="" id="peso" value="1">
+    </div>
+    <div>
+      <label for="altura">altura</label>
+      <input type="number" name="" id="altura">
+    </div>
+    <div>
+      <label for="imc">imc: </label>
+      <input type="number" name="" id="imc" disabled>
+    </div>
+    <div>
+      <input type="button" value="Calcular" onclick="click_calcular();">
+
+      <input type="button" value="Limpar" onclick="click_limpar();">
+    </div>
+  </form>
+
+
+
+</body>
+
+</html>
